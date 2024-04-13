@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+
+    <title>Florence Hotel</title>
+
+</head>
+<body>
+    <nav class="fixed-navigation">
+        <img class="logo" src="./Assets/logo.svg"/>
+        <ul class="nav-links">
+            <li><a class="nav-link" href="index3.html">Home</a></li>
+            <li><a class="nav-link" href="#browse">Find offers</a></li>
+            <li><a class="nav-link" href="#rent">Rent with us</a></li>
+            <li><a class="nav-link" href="#myoffers">My offers</a></li>
+            <li><a class="nav-link" href="#">Sign up</a></li>
+            <button class="button primary">Log in</button>
+        </ul>
+        <button class="button primary hidden">Menu</button>
+    </nav>
+    <div>
+        <h1 class="hotel-name">Harmony Hideaway Hotel</h1>
+    </div>
+    <section class="hotel-grid">
+        <div class="left-column">
+            <!-- <img class="hotel-image" src="./Assets/cards1.jpg" alt="Florence Hotel"> -->
+            <article class="hotel-card">
+                <div class="hotel-image">
+                    <p class="chip">Add to favourites <img src="./Assets/Arrow.svg"></p>
+                </div>
+            </article>
+        </div>
+        <div class="righ-column">
+            <div class="hotel-details">
+                <div class="hotel-info">
+                    <p><strong>Location:</strong> Florence, Italy</p>
+                    <p><strong>Stars:</strong> ★★★★</p>
+                    <p><strong>Price:</strong> €100/night</p>
+                </div>
+                <p class="hotel-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus quis felis a venenatis. Suspendisse accumsan aliquam lorem, sit amet ultricies justo tristique nec.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus quis felis a venenatis. Suspendisse accumsan aliquam lorem, sit amet ultricies justo tristique nec.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus quis felis a venenatis. Suspendisse accumsan aliquam lorem, sit amet ultricies justo tristique nec.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus quis felis a venenatis. Suspendisse accumsan aliquam lorem, sit amet ultricies justo tristique nec.
+                </p>
+                <div class="button-container">
+                    <button class="button primary" id="editHotelBtn">Edit Hotel</button>
+                    <div class="sub-column">
+                        <button class="button primary">Remove Hotel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <dialog id="editHotelModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="hotel-name">Edit Hotel Details</h2>
+            <form class="modal-form" id="editHotelForm">
+                <label for="hotelName">Hotel Name:</label>
+                <input type="text" id="hotelName" name="hotelName" required>
+    
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+    
+                <label for="stars">Stars:</label>
+                <select id="stars" name="stars" required>
+                    <option value="1">★</option>
+                    <option value="2">★★</option>
+                    <option value="3">★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="5">★★★★★</option>
+                </select>
+    
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+    
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+    
+                <button type="submit" class="button primary">Save Changes</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
