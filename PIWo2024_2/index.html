@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToDo List</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="container">
+
+<h1 class="my-4">ToDo List</h1>
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" id="taskInput" placeholder="Dodaj nową pozycję">
+    <div class="input-group-append">
+        <select id="listSelector" class="form-control">
+            <!-- tu się dodają opcje wyboru listy -->
+        </select>
+        <button class="btn btn-primary" onclick="addTask()">Dodaj</button>
+    </div>
+</div>
+
+<div>
+    <button class="btn btn-secondary" onclick="createNewList()">Dodaj nową listę</button>
+</div>
+
+<div id="lists">
+    <!-- tu się pojawiają listy -->
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Czy na pewno chcesz usunąć zadanie o treści:</p>
+        <p id="taskToDelete"></p>
+        <button class="btn btn-danger" onclick="confirmDelete()">Usuń</button>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
