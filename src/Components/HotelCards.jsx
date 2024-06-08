@@ -1,14 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../App.css'; // CSS styles for hotel cards
+import '../App.css';
 
-const HotelCards = ({ name, location, rating, price, imgSrc, onClick }) => {
-  // const navigate = useNavigate(); // Initialize the navigate hook
-
-  // const handleViewOffer = () => {
-  //   navigate('/hotel-details'); // Navigate to the HotelDetails page
-  // };
-
+const HotelCards = ({ name, location, rating, price, imgSrc, onClick, onAddToFavourites, onRemoveFromFavourites, isFavourite }) => {
   return (
     <article className="hotel-card">
       <div className="card-image" style={{ backgroundImage: `url(${imgSrc})` }}>
@@ -21,6 +14,11 @@ const HotelCards = ({ name, location, rating, price, imgSrc, onClick }) => {
         <p className="text-middle">{price}/room</p>
       </div>
       <button className="button primary" onClick={onClick}>View offer <img src="./Assets/Arrow.svg" alt="Arrow" /></button>
+      {isFavourite ? (
+        <button className="button secondary" onClick={onRemoveFromFavourites}>Remove from Favourites</button>
+      ) : (
+        <button className="button primary" onClick={onAddToFavourites}>Add to Favourites</button>
+      )}
     </article>
   );
 };

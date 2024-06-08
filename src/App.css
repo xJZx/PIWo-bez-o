@@ -425,6 +425,138 @@ body{
   row-gap: 48px;
 }
 
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #dcdcdc;
+  padding: 30px;
+}
+.login__textBox {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.login__google {
+  background-color: #4285f4;
+}
+.login div {
+  margin-top: 7px;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.signup-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.signup-form input {
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.signup-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Email form container styling */
+.email-container {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.email-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  height: 100px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.email-form textarea:focus {
+  border-color: #007BFF;
+}
+
+.email-form button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.email-form button:hover {
+  background-color: #0056b3;
+}
+
 .hidden{
   display: none;
 }

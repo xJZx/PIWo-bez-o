@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom'; // Import the useLocation hook
+import { useLocation } from 'react-router-dom';
 import '../App.css';
 import EditHotelModal from '../Components/EditHotelModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HotelDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const location = useLocation(); // Get the data from the navigation state
+  const [emailContent, setEmailContent] = useState("");
+  const location = useLocation();
 
-  const hotel = location.state || {}; // Default to an empty object if no state is passed
+  const hotel = location.state || {};
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -15,6 +18,12 @@ const HotelDetails = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    toast.success("Email sent!");
+    setEmailContent("");
   };
 
   return (
@@ -49,6 +58,19 @@ const HotelDetails = () => {
                 <button className="button primary">Remove Hotel</button>
               </div>
             </div>
+            <div className="email-container">
+              <form onSubmit={handleSendEmail} className="email-form">
+                <label htmlFor="emailContent">Message to Owner:</label>
+                <textarea
+                  id="emailContent"
+                  value={emailContent}
+                  onChange={(e) => setEmailContent(e.target.value)}
+                  placeholder="Write your message here..."
+                  required
+                />
+                <button type="submit" className="button primary">Send Email</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -56,6 +78,7 @@ const HotelDetails = () => {
       {isModalOpen && (
         <EditHotelModal isOpen={isModalOpen} onClose={handleCloseModal} />
       )}
+      <ToastContainer />
     </>
   );
 };
